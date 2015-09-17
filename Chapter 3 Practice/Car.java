@@ -36,7 +36,6 @@ public class Car
     {
         double gas = this.getGasInTank();
         fuelInTank -= distance / fuelEfficiency;
-        
     }
 
     /**

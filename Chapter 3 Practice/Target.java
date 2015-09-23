@@ -1,23 +1,28 @@
-
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
 
 /**
- * Write a description of class Target here.
+ * A target shape that can be positioned anywhere on the screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Michael Zhang
+ * @version 23 September 2015
  */
 public class Target
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int x;
+    private int xLeft;
+    private int yTop;
 
     /**
      * Default constructor for objects of class Target
      */
-    public Target()
+    public Target(int x, int y)
     {
-        // initialise instance variables
-        x = 0;
+        xLeft = x;
+        yTop = y;
     }
 
     /**
@@ -31,10 +36,19 @@ public class Target
      * @param    y    description of parameter y
      * @return    description of the return value
      */
-    public int sampleMethod(int y)
+    public void draw(Graphics2D g2)
     {
-        // put your code here
-        return x+y;
+        Ellipse2D.Double ring1 = new Ellipse2D.Double(xLeft + 100, yTop + 100, 400, 400);
+        Ellipse2D.Double ring2 = new Ellipse2D.Double(xLeft + 150, yTop + 150, 300, 300);
+        Ellipse2D.Double ring3 = new Ellipse2D.Double(xLeft + 200, yTop + 200, 200, 200);
+        Ellipse2D.Double ring4 = new Ellipse2D.Double(xLeft + 250, yTop + 250, 100, 100);
+        
+        g2.draw(ring1);
+        g2.draw(ring2);
+        g2.draw(ring3);
+        g2.draw(ring4);
+        g2.fill(ring4);
+        g2.fill(ring2);
     }
 
 }

@@ -13,9 +13,9 @@ public class TargetComponent extends JComponent
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
-        
+
         Target target = new Target(0,0);
-        
+
         int x = getWidth();
         int y = getHeight();
         

@@ -13,6 +13,8 @@ public class Building
     /** description of instance variable x (add comment for each instance variable) */
     private int xLeft;
     private int yTop;
+    private int randHeight;
+    private int randWidth;
     
     /**
      * Default constructor for objects of class Building
@@ -21,6 +23,9 @@ public class Building
     {
         xLeft = x;
         yTop = y;
+        Random random = new Random();
+        int randHeight = random.nextInt(275) + 100;
+        int randWidth = randHeight/2;
     }
 
     /**
@@ -36,12 +41,8 @@ public class Building
      */
     public void draw(Graphics2D g2)
     {
-        Random random = new Random();
-        int randHeight = random.nextInt(400) + 100;
-        int randWidth = randHeight/2;
-        Rectangle building = new Rectangle(randWidth, randHeight);
+        Rectangle building = new Rectangle(xLeft, yTop, randWidth, randHeight);
         
-        g2.draw(building);
     }
 
 }

@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
+import java.util.Random;
 
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
@@ -30,11 +31,20 @@ public class CityscapeComponent extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         
-        // invoke the draw method on each object in your Cityscape
-        // ...
-
-        rectangle.draw();
-        
+        Random randomPlacement = new Random();
+        int buildingPlacement;
+        Random randomNumber = new Random();
+        int buildingNumber = randomNumber.nextInt(10) + 5;
+        for (int i = 0; i < buildingNumber; i += 1)
+        {
+            buildingPlacement = randomPlacement.nextInt(750) + 25;
+            Building building = new Building(buildingPlacement, 600);
+            
+            int x = getWidth();
+            int y = getHeight();
+            
+            building.draw(g2);
+        }
     }
     
     /**

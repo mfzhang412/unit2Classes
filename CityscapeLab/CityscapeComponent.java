@@ -2,7 +2,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import java.util.Random;
-
+import java.util.Scanner;
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
@@ -12,14 +12,14 @@ import java.util.Random;
  */
 public class CityscapeComponent extends JComponent
 {
-    // define the objects in your Cityscape as instance variables
-    // ...
+    Sun sun;
+    Building building;
     
-    
-    
-    // define the CityscapeComponent contructor and intiailize all instance variables
-    // ...
-    
+    public CityscapeComponent(int xValue,int yValue)
+    {
+        sun = new Sun(xValue,yValue);
+        building = new Building(500, 500);
+    }
     
     
     /**
@@ -31,20 +31,8 @@ public class CityscapeComponent extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         
-        Random randomPlacement = new Random();
-        int buildingPlacement;
-        Random randomNumber = new Random();
-        int buildingNumber = randomNumber.nextInt(10) + 5;
-        for (int i = 0; i < buildingNumber; i += 1)
-        {
-            buildingPlacement = randomPlacement.nextInt(750) + 25;
-            Building building = new Building(buildingPlacement, 600);
-            
-            int x = getWidth();
-            int y = getHeight();
-            
-            building.draw(g2);
-        }
+        building.draw(g2);
+        sun.draw(g2);
     }
     
     /**

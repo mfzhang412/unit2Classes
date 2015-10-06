@@ -1,29 +1,29 @@
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
+import java.awt.Color;
 
 /**
- * A building shape that can be positioned anywhere on the screen.
+ * A target shape that can be positioned anywhere on the screen.
  * 
  * @author Michael Zhang
- * @version 2 October 2015
+ * @version 6 October 2015
  */
-public class Building
+public class Sun
 {
     /** description of instance variable x (add comment for each instance variable) */
-    int xLeft;
-    int yPos;
-    int buildingHeight;
-    int buildingWidth;
-    
+    private int xLeft;
+    private int yTop;
+
     /**
-     * Default constructor for objects of class Building
+     * Default constructor for objects of class Target
      */
-    public Building(int x, int height)
+    public Sun(int x, int y)
     {
         xLeft = x;
-        buildingHeight = height;
-        yPos = 1250 - buildingHeight;
-        buildingWidth = height * (2/5);
+        yTop = y;
     }
 
     /**
@@ -39,8 +39,11 @@ public class Building
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle building = new Rectangle(xLeft, yPos, buildingWidth, buildingHeight);
+        Ellipse2D.Double sun = new Ellipse2D.Double(xLeft, yTop, 100, 100);
         
-        g2.draw(building);
+        g2.setColor(Color.YELLOW);
+        g2.fill(sun);
+        g2.draw(sun);
     }
+
 }

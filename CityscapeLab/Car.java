@@ -1,5 +1,9 @@
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
+import java.awt.Color;
 
 /**
  * A building shape that can be positioned anywhere on the screen.
@@ -7,23 +11,21 @@ import java.awt.Rectangle;
  * @author Michael Zhang
  * @version 2 October 2015
  */
-public class Building
+public class Car
 {
     /** description of instance variable x (add comment for each instance variable) */
-    int xLeft;
-    int yPos;
-    int buildingHeight;
-    int buildingWidth;
+    private int xLeft;
+    private int yTop;
+    private int animation;
     
     /**
      * Default constructor for objects of class Building
      */
-    public Building(int x, int height)
+    public Car(int x, int y)
     {
         xLeft = x;
-        buildingHeight = height;
-        yPos = 900 - buildingHeight;
-        buildingWidth = (int) (buildingHeight * .4);
+        yTop = y;
+        animation += 5;
     }
 
     /**
@@ -39,8 +41,11 @@ public class Building
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle building = new Rectangle(xLeft, yPos, buildingWidth, buildingHeight);
-        
-        g2.draw(building);
+        Ellipse2D.Double backWheel = new Ellipse2D.Double(xLeft + animation, yTop, 20, 20);
+        Ellipse2D.Double frontWheel = new Ellipse2D.Double(xLeft + 40 + animation, yTop, 20, 20);
+        Rectangle carBody = new Rectangle(xLeft + animation, yTop - 20, 60, 20);
+        g2.draw(backWheel);
+        g2.draw(frontWheel);
+        g2.draw(carBody);
     }
 }

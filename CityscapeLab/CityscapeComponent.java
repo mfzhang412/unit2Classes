@@ -35,6 +35,12 @@ public class CityscapeComponent extends JComponent
     /** defines the building6 object as an object in class Building */
     Building building6;
     
+    /** defines the building7 object as an object in class Building */
+    Building building7;
+    
+    /** defines the building8 object as an object in class Building */
+    Building building8;
+    
     /** defines the car1 object as an object in class Car */
     Car car1;
     
@@ -137,6 +143,18 @@ public class CityscapeComponent extends JComponent
     /** specifies the position of the building6 object */
     int randomPosition6;
     
+    /** specifies the height of the building7 object */
+    int randomHeight7;
+    
+    /** specifies the position of the building7 object */
+    int randomPosition7;
+    
+    /** specifies the height of the building8 object */
+    int randomHeight8;
+    
+    /** specifies the position of the building8 object */
+    int randomPosition8;
+    
     /**
      * Constructor for objects of CityscapeComponent that specifies the starting coordinates of the sun, and creates a random number of building objects with
      * random heights and widths.
@@ -150,12 +168,12 @@ public class CityscapeComponent extends JComponent
         
         if (counter == 1)
         {
-            randomBuildings = random.nextInt(3) + 3;
+            randomBuildings = random.nextInt(3) + 6;
         }
         
         if (counter == 1)
         {
-            if (randomBuildings >= 3)
+            if (randomBuildings >= 6)
             {
                 randomHeight1 = random.nextInt(350) + 200;
                 randomPosition1 = random.nextInt(1080);
@@ -168,27 +186,32 @@ public class CityscapeComponent extends JComponent
                 randomHeight3 = random.nextInt(350) + 200;
                 randomPosition3 = random.nextInt(1080);
                 building3 = new Building(randomPosition3, randomHeight3);
-            }
-            
-            if (randomBuildings >= 4)
-            {
+                
                 randomHeight4 = random.nextInt(350) + 200;
                 randomPosition4= random.nextInt(1080);
                 building4 = new Building(randomPosition4, randomHeight4);
-            }
-            
-            if (randomBuildings >= 5)
-            {
+                
                 randomHeight5 = random.nextInt(350) + 200;
                 randomPosition5 = random.nextInt(1080);
                 building5 = new Building(randomPosition5, randomHeight5);
-            }
-            
-            if (randomBuildings == 6)
-            {
+                
                 randomHeight6 = random.nextInt(350) + 200;
                 randomPosition6 = random.nextInt(1080);
                 building6 = new Building(randomPosition6, randomHeight6);
+            }
+            
+            if (randomBuildings >= 7)
+            {
+                randomHeight7 = random.nextInt(350) + 200;
+                randomPosition7 = random.nextInt(1080);
+                building7 = new Building(randomPosition7, randomHeight7);
+            }
+            
+            if (randomBuildings == 8)
+            {
+                randomHeight8 = random.nextInt(350) + 200;
+                randomPosition8 = random.nextInt(1080);
+                building8 = new Building(randomPosition8, randomHeight8);
             }
         }
         
@@ -205,26 +228,24 @@ public class CityscapeComponent extends JComponent
         
         sun.draw(g2);
 
-        if (randomBuildings >= 3)
+        if (randomBuildings >= 6)
         {
             building1.draw(g2);
             building2.draw(g2);
             building3.draw(g2);
-        }
-        
-        if (randomBuildings >= 4)
-        {
             building4.draw(g2);
-        }
-        
-        if (randomBuildings >= 5)
-        {
             building5.draw(g2);
+            building6.draw(g2);
         }
         
-        if (randomBuildings == 6)
+        if (randomBuildings >= 7)
         {
-            building6.draw(g2);
+            building7.draw(g2);
+        }
+        
+        if (randomBuildings == 8)
+        {
+            building8.draw(g2);
         }
 
         airplane1.draw(g2);
@@ -261,7 +282,7 @@ public class CityscapeComponent extends JComponent
         car3 = new Car(500 + car3Animation, 650);
         
         car4Animation += 2;
-        car4 = new Car(800 - car4Animation, 650);
+        car4 = new Car(1000 - car4Animation, 650);
         
         car5Animation += 75;
         car5 = new Car(20000 - car5Animation, 650);

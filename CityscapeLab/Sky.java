@@ -35,7 +35,7 @@ public class Sky
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle sky = new Rectangle (0, 0, 1400, 350);
+        Rectangle sky = new Rectangle (0, 0, 1400, 500);
         
         if (xLeft >= 0)
         {

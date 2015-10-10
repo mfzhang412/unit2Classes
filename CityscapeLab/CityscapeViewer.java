@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class CityscapeViewer
 {
     /** animates the frame*/
-    static final int ANIMATION_TIME_IN_SECONDS = 360;
+    static final int ANIMATION_TIME_IN_SECONDS = 550;
    
     /**
      * main method for the program which creates and configures the frame for the program

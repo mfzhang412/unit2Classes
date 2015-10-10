@@ -35,8 +35,28 @@ public class Sun
      */
     public void draw(Graphics2D g2)
     {
-        Ellipse2D.Double sun = new Ellipse2D.Double(xLeft, yTop, 100, 100);
+        Rectangle sky = new Rectangle (0, 0, 1400, 350);
+        if (xLeft >= 0)
+        {
+            g2.setColor(Color.PINK);
+            g2.fill(sky);
+        }
         
+        if (xLeft >= 312)
+        {
+            g2.setColor(Color.CYAN);
+            g2.fill(sky);
+        }
+        
+        if (xLeft >= 938)
+        {
+            g2.setColor(Color.RED);
+            g2.fill(sky);
+        }
+        
+        g2.draw(sky);
+        
+        Ellipse2D.Double sun = new Ellipse2D.Double(xLeft, yTop, 100, 100);
         g2.setColor(Color.YELLOW);
         g2.fill(sun);
         g2.draw(sun);

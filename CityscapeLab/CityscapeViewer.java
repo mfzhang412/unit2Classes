@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class CityscapeViewer
 {
     // the cityscape will be animated for 60 seconds
-    static final int ANIMATION_TIME_IN_SECONDS = 120;
+    static final int ANIMATION_TIME_IN_SECONDS = 360;
    
     /**
      * main method for the program which creates and configures the frame for the program
@@ -28,9 +28,9 @@ public class CityscapeViewer
         // use the Scanner class to prompt the user for some configurable aspect of the cityscape
         // ...
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter in a horizontal position for the sun (x value; 0 to 1150): ");
+        System.out.print("Enter in a horizontal position for the sun (x value; 0 to 1250): ");
         int xValue = scanner.nextInt();
-        System.out.print("Enter in a vertical position for the sun (y value; 0 to 200): ");
+        System.out.print("Enter in a vertical position for the sun (y value; 0 to 100): ");
         int yValue = scanner.nextInt();
         
         

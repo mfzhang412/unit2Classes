@@ -28,7 +28,10 @@ public class CityscapeComponent extends JComponent
     int planeAnimation;
     int carAnimation;
     int randomBuildings;
+    int sunAnimation;
     int counter;
+    int xSun;
+    int ySun;
     
     int randomHeight1;
     int randomPosition1;
@@ -45,6 +48,8 @@ public class CityscapeComponent extends JComponent
     
     public CityscapeComponent(int xValue,int yValue)
     {
+        xSun = xValue;
+        ySun = yValue;
         counter += 1;
         random = new Random();
         
@@ -92,8 +97,7 @@ public class CityscapeComponent extends JComponent
             }
         }
         
-        sun = new Sun(xValue,yValue);
-        car = new Car(0, 650);
+        
     }
     
     
@@ -106,6 +110,7 @@ public class CityscapeComponent extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         
+        sun.draw(g2);
         if (randomBuildings >= 3)
         {
             building1.draw(g2);
@@ -128,7 +133,6 @@ public class CityscapeComponent extends JComponent
             building6.draw(g2);
         }
         
-        sun.draw(g2);
         airplane.draw(g2);
         car.draw(g2);
     }
@@ -142,6 +146,9 @@ public class CityscapeComponent extends JComponent
     {
         // update the objects in the cityscape so they are animated
         // ...
+        sunAnimation += 8;
+        sun = new Sun(xSun + sunAnimation,ySun);
+        
         planeAnimation += 20;
         airplane = new Airplane(100 + planeAnimation, 100);
         

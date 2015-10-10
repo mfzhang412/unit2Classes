@@ -14,44 +14,109 @@ import java.util.Random;
  */
 public class CityscapeComponent extends JComponent
 {
-    Sun sun;
+    /** defines the sun object as an object in class Sky */
+    Sky sun;
+    
+    /** defines the building1 object as an object in class Building */
     Building building1;
+    
+    /** defines the building2 object as an object in class Building */
     Building building2;
+    
+    /** defines the building3 object as an object in class Building */
     Building building3;
+    
+    /** defines the building4 object as an object in class Building */
     Building building4;
+    
+    /** defines the building5 object as an object in class Building */
     Building building5;
+    
+    /** defines the building6 object as an object in class Building */
     Building building6;
+    
+    /** defines the car object as an object in class Car */
     Car car;
+    
+    /** defines the airplane object as an object in class Airplane */
     Airplane airplane;
+    
+    /** defines the random object as an object in class Random */
     Random random;
     
+    
+   
+    /** specifies the incrementation of the plane object's animation */
     int planeAnimation;
+    
+    /** specifies the incrementation of the car object's animation */
     int carAnimation;
-    int randomBuildings;
+    
+    /** specifies the incrementation of the sun object's animation */
     int sunAnimation;
+    
+    
+    
+    /** specifies the number of buildings generated */
+    int randomBuildings;
+    
+    /** makes sure that the building objects don't change when a new frame is created */
     int counter;
+    
+    
+    
+    /** specifies starting x coordinate of the sun object */
     int xSun;
+    
+    /** specifies starting y coordinate of the sun object */
     int ySun;
     
+    /** specifies the height of the building1 object */
     int randomHeight1;
+    
+    /** specifies the position of the building1 object */
     int randomPosition1;
+    
+    /** specifies the height of the building2 object */
     int randomHeight2;
+    
+    /** specifies the position of the building2 object */
     int randomPosition2;
+    
+    /** specifies the height of the building3 object */
     int randomHeight3;
+    
+    /** specifies the position of the building3 object */
     int randomPosition3;
+    
+    /** specifies the height of the building4 object */
     int randomHeight4;
+    
+    /** specifies the position of the building4 object */
     int randomPosition4;
+    
+    /** specifies the height of the building5 object */
     int randomHeight5;
+    
+    /** specifies the position of the building5 object */
     int randomPosition5;
+    
+    /** specifies the height of the building6 object */
     int randomHeight6;
+    
+    /** specifies the position of the building6 object */
     int randomPosition6;
     
+    /**
+     * Constructor for objects of CityscapeComponent that specifies the starting coordinates of the sun, and creates a random number of building objects with
+     * random heights and widths.
+     */
     public CityscapeComponent(int xValue,int yValue)
     {
+        random = new Random();
         xSun = xValue;
         ySun = yValue;
         counter += 1;
-        random = new Random();
         
         if (counter == 1)
         {
@@ -97,20 +162,19 @@ public class CityscapeComponent extends JComponent
             }
         }
         
-        
     }
     
     
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
      * It does not need to be invoked explicitly.
-     *
      */
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
         
         sun.draw(g2);
+
         if (randomBuildings >= 3)
         {
             building1.draw(g2);
@@ -132,7 +196,7 @@ public class CityscapeComponent extends JComponent
         {
             building6.draw(g2);
         }
-        
+
         airplane.draw(g2);
         car.draw(g2);
     }
@@ -140,21 +204,19 @@ public class CityscapeComponent extends JComponent
     
     /**
      * Animate the cityscape by updating the objects such that they appear to be animated when they are next drawn.
-     *
      */
     public void nextFrame()
     {
-        // update the objects in the cityscape so they are animated
-        // ...
         sunAnimation += 8;
-        sun = new Sun(xSun + sunAnimation,ySun);
+        sun = new Sky(xSun + sunAnimation,ySun);
         
         planeAnimation += 20;
         airplane = new Airplane(100 + planeAnimation, 100);
         
         carAnimation += 13;
         car = new Car(1400 - carAnimation, 650);
-        // request that the Java Runtime repaints this component by invoking its paintComponent method
+
+        
         repaint();
     }
 

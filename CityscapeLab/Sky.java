@@ -6,12 +6,12 @@ import java.awt.geom.Point2D;
 import java.awt.Color;
 
 /**
- * A sun shape that can be drawn on the screen.
+ * A clas that simulates daytime and nighttime with the color of the sky, sun shape, and moon shape.
  * 
  * @author Michael Zhang
  * @version 11 October 2015
  */
-public class Sun
+public class Sky
 {
     /**  specifies the x coordinate of the sun. */
     private int xLeft;
@@ -22,20 +22,21 @@ public class Sun
     /**
      * Constructor for objects of class Target that specifies the position of the sun object.
      */
-    public Sun(int x, int y)
+    public Sky(int x, int y)
     {
         xLeft = x;
         yTop = y;
     }
 
     /**
-     * Draws the sun object and fills in the color.
+     * Draws the sun, moon, and sky objects and fills in their respective colors.
      *
      * @param    g2    the window in which the object will be drawn.
      */
     public void draw(Graphics2D g2)
     {
         Rectangle sky = new Rectangle (0, 0, 1400, 350);
+        
         if (xLeft >= 0)
         {
             g2.setColor(Color.PINK);
@@ -54,6 +55,7 @@ public class Sun
             g2.fill(sky);
         }
         
+        
         if (xLeft > 1400)
         {
             g2.setColor(Color.BLACK);
@@ -70,6 +72,7 @@ public class Sun
             g2.draw(crescent);
             
         }
+        
         g2.draw(sky);
         
         Ellipse2D.Double sun = new Ellipse2D.Double(xLeft, yTop, 100, 100);

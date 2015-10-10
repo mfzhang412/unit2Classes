@@ -44,6 +44,7 @@ public class Building
         g2.setColor(Color.GRAY);
         g2.fill(building);
         g2.draw(building);
+        
         g2.setColor(Color.WHITE);
         for (int yIncrement = 20; yIncrement < buildingHeight - 20; yIncrement += 40)
         {
@@ -55,4 +56,5 @@ public class Building
             }
         }
     }
+    
 }

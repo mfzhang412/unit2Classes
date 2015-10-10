@@ -49,6 +49,7 @@ public class Airplane
         g2.draw(bottomAirplaneWing);
         
         Rectangle window = new Rectangle(xLeft + 73, yTop + 5, 12, 12);
+        g2.setColor(Color.WHITE);
         g2.fill(window);
         g2.draw(window);
     }

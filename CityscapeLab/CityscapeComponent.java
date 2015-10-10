@@ -35,22 +35,52 @@ public class CityscapeComponent extends JComponent
     /** defines the building6 object as an object in class Building */
     Building building6;
     
-    /** defines the car object as an object in class Car */
-    Car car;
+    /** defines the car1 object as an object in class Car */
+    Car car1;
     
-    /** defines the airplane object as an object in class Airplane */
-    Airplane airplane;
+    /** defines the car2 object as an object in class Car */
+    Car car2;
+    
+    /** defines the car3 object as an object in class Car */
+    Car car3;
+    
+    /** defines the car4 object as an object in class Car */
+    Car car4;
+    
+    /** defines the car5 object as an object in class Car */
+    Car car5;
+    
+    /** defines the airplane1 object as an object in class Airplane */
+    Airplane airplane1;
+    
+    /** defines the airplane2 object as an object in class Airplane */
+    Airplane airplane2;
     
     /** defines the random object as an object in class Random */
     Random random;
     
     
    
-    /** specifies the incrementation of the plane object's animation */
-    int planeAnimation;
+    /** specifies the incrementation of the plane1 object's animation */
+    int plane1Animation;
     
-    /** specifies the incrementation of the car object's animation */
-    int carAnimation;
+    /** specifies the incrementation of the plane2 object's animation */
+    int plane2Animation;
+    
+    /** specifies the incrementation of the car1 object's animation */
+    int car1Animation;
+    
+    /** specifies the incrementation of the car2 object's animation */
+    int car2Animation;
+    
+    /** specifies the incrementation of the car3 object's animation */
+    int car3Animation;
+    
+    /** specifies the incrementation of the car4 object's animation */
+    int car4Animation;
+    
+    /** specifies the incrementation of the car5 object's animation */
+    int car5Animation;
     
     /** specifies the incrementation of the sun object's animation */
     int sunAnimation;
@@ -197,8 +227,13 @@ public class CityscapeComponent extends JComponent
             building6.draw(g2);
         }
 
-        airplane.draw(g2);
-        car.draw(g2);
+        airplane1.draw(g2);
+        airplane2.draw(g2);
+        car1.draw(g2);
+        car2.draw(g2);
+        car3.draw(g2);
+        car4.draw(g2);
+        car5.draw(g2);
     }
     
     
@@ -210,12 +245,26 @@ public class CityscapeComponent extends JComponent
         sunAnimation += 8;
         sun = new Sky(xSun + sunAnimation,ySun);
         
-        planeAnimation += 20;
-        airplane = new Airplane(100 + planeAnimation, 100);
+        plane1Animation += 25;
+        airplane1 = new Airplane(100 + plane1Animation, 100);
         
-        carAnimation += 13;
-        car = new Car(1400 - carAnimation, 650);
+        plane2Animation += 25;
+        airplane2 = new Airplane(-5000 + plane2Animation, 50);
+        
+        car1Animation += 10;
+        car1 = new Car(1400 - car1Animation, 650);
 
+        car2Animation += 13;
+        car2 = new Car(0 + car2Animation, 650);
+        
+        car3Animation += 20;
+        car3 = new Car(500 + car3Animation, 650);
+        
+        car4Animation += 2;
+        car4 = new Car(800 - car4Animation, 650);
+        
+        car5Animation += 75;
+        car5 = new Car(20000 - car5Animation, 650);
         
         repaint();
     }

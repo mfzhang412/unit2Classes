@@ -54,6 +54,11 @@ public class Sun
             g2.fill(sky);
         }
         
+        if (xLeft > 1400)
+        {
+            g2.setColor(Color.BLACK);
+            g2.fill(sky);
+        }
         g2.draw(sky);
         
         Ellipse2D.Double sun = new Ellipse2D.Double(xLeft, yTop, 100, 100);

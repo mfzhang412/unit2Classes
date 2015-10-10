@@ -40,7 +40,7 @@ public class Airplane
         Rectangle bottomAirplaneWing = new Rectangle(xLeft + 35, yTop + 35, 20, 40);
         Rectangle window = new Rectangle(xLeft + 73, yTop + 5, 12, 12);
         
-        g2.setColor(Color.BLACK);
+        g2.setColor(Color.lightGray);
         g2.fill(airplaneBody);
         g2.draw(airplaneBody);
         g2.fill(topAirplaneWing);

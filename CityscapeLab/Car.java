@@ -40,11 +40,12 @@ public class Car
         Rectangle carBody = new Rectangle(xLeft, yTop - 20, 60, 20);
         Rectangle road = new Rectangle(0, yTop + 20, 1400, 50);
         
-        g2.setColor(Color.GREEN);
+        g2.setColor(Color.darkGray);
         g2.fill(backWheel);
         g2.draw(backWheel);
         g2.fill(frontWheel);
         g2.draw(frontWheel);
+        g2.setColor(Color.GREEN);
         g2.fill(carBody);
         g2.draw(carBody);
         g2.setColor(Color.BLACK);

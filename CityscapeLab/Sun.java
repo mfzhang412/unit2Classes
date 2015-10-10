@@ -6,19 +6,21 @@ import java.awt.geom.Point2D;
 import java.awt.Color;
 
 /**
- * A target shape that can be positioned anywhere on the screen.
+ * A sun shape that can be drawn on the screen.
  * 
  * @author Michael Zhang
- * @version 6 October 2015
+ * @version 11 October 2015
  */
 public class Sun
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /**  specifies the x coordinate of the sun. */
     private int xLeft;
+    
+    /**  specifies the y coordinate of the sun. */
     private int yTop;
 
     /**
-     * Default constructor for objects of class Target
+     * Constructor for objects of class Target that specifies the position of the sun object.
      */
     public Sun(int x, int y)
     {
@@ -27,15 +29,9 @@ public class Sun
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
+     * Draws the sun object and fills in the color.
      *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+     * @param    g2    the window in which the object will be drawn.
      */
     public void draw(Graphics2D g2)
     {

@@ -9,7 +9,7 @@ import java.util.Scanner;
  *  cityscape to these object.
  * 
  * @author Michael Zhang
- * @version 2 October 2015
+ * @version 11 October 2015
  */
 public class CityscapeComponent extends JComponent
 {
@@ -17,13 +17,15 @@ public class CityscapeComponent extends JComponent
     Building building1;
     Building building2;
     Car car;
+    Airplane airplane;
+    int animation;
     
     public CityscapeComponent(int xValue,int yValue)
     {
         sun = new Sun(xValue,yValue);
         building1 = new Building(600, 500);
-        building2 = new Building(200, 700);
-        car = new Car(0, 800);
+        building2 = new Building(250, 400);
+        car = new Car(0, 650);
     }
     
     
@@ -40,6 +42,7 @@ public class CityscapeComponent extends JComponent
         building1.draw(g2);
         building2.draw(g2);
         sun.draw(g2);
+        airplane.draw(g2);
     }
     
     /**
@@ -50,8 +53,8 @@ public class CityscapeComponent extends JComponent
     {
         // update the objects in the cityscape so they are animated
         // ...
-        
-        
+        animation += 20;
+        airplane = new Airplane(100 + animation, 100);
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         repaint();

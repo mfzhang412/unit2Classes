@@ -6,17 +6,16 @@ import java.awt.geom.Point2D;
 import java.awt.Color;
 
 /**
- * A building shape that can be positioned anywhere on the screen.
+ * A car shape that can be placed anywhere the screen.
  * 
  * @author Michael Zhang
- * @version 2 October 2015
+ * @version 11 October 2015
  */
 public class Car
 {
     /** description of instance variable x (add comment for each instance variable) */
     private int xLeft;
     private int yTop;
-    private int animation;
     
     /**
      * Default constructor for objects of class Building
@@ -25,7 +24,6 @@ public class Car
     {
         xLeft = x;
         yTop = y;
-        animation += 5;
     }
 
     /**
@@ -41,9 +39,9 @@ public class Car
      */
     public void draw(Graphics2D g2)
     {
-        Ellipse2D.Double backWheel = new Ellipse2D.Double(xLeft + animation, yTop, 20, 20);
-        Ellipse2D.Double frontWheel = new Ellipse2D.Double(xLeft + 40 + animation, yTop, 20, 20);
-        Rectangle carBody = new Rectangle(xLeft + animation, yTop - 20, 60, 20);
+        Ellipse2D.Double backWheel = new Ellipse2D.Double(xLeft, yTop, 20, 20);
+        Ellipse2D.Double frontWheel = new Ellipse2D.Double(xLeft + 40, yTop, 20, 20);
+        Rectangle carBody = new Rectangle(xLeft, yTop - 20, 60, 20);
         g2.draw(backWheel);
         g2.draw(frontWheel);
         g2.draw(carBody);

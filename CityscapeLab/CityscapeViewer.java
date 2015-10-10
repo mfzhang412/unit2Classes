@@ -4,8 +4,8 @@ import java.util.Scanner;
 /**
  * Class that contains the main method for the program and creates the frame containing the component.
  * 
- * @author @gcschmit
- * @version 18 July 2014
+ * @author Michael Zhang
+ * @version 11 October 2015
  */
 public class CityscapeViewer
 {
@@ -21,7 +21,7 @@ public class CityscapeViewer
         // create and configure the frame (window) for the program
         JFrame frame = new JFrame();
         
-        frame.setSize(1250 /* x */, 900 /* y */);
+        frame.setSize(1300 /* x */, 750 /* y */);
         frame.setTitle("Cityscape");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -46,7 +46,7 @@ public class CityscapeViewer
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
             component.nextFrame();
-            Thread.sleep( 1000 );
+            Thread.sleep( 100 );
         }
         
     }

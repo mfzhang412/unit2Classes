@@ -1,46 +1,58 @@
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Color;
 
 /**
  * A building shape that can be positioned anywhere on the screen.
  * 
  * @author Michael Zhang
- * @version 2 October 2015
+ * @version 11 October 2015
  */
 public class Building
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /** specifies the x coordinate of the building. */
     int xLeft;
+    
+    /** specifies the y coordinate of the building. */
     int yPos;
+    
+    /** specifies the height of the building. */
     int buildingHeight;
+    
+    /** specifies the width of the building. */
     int buildingWidth;
     
     /**
-     * Default constructor for objects of class Building
+     * Constructor for objects of class Building that specifies the position, width, and height of the building object.
      */
     public Building(int x, int height)
     {
         xLeft = x;
         buildingHeight = height;
-        yPos = 900 - buildingHeight;
+        yPos = 750 - buildingHeight - 100;
         buildingWidth = (int) (buildingHeight * .4);
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
+     * Draws the components of the building object.
      *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+     * @param    g2    the window in which the object will be drawn.
      */
     public void draw(Graphics2D g2)
     {
         Rectangle building = new Rectangle(xLeft, yPos, buildingWidth, buildingHeight);
-        
+        g2.setColor(Color.GRAY);
+        g2.fill(building);
         g2.draw(building);
+        g2.setColor(Color.WHITE);
+        for (int yIncrement = 20; yIncrement < buildingHeight - 20; yIncrement += 40)
+        {
+            for (int xIncrement = 20; xIncrement < buildingWidth - 20; xIncrement += 40)
+            {
+                Rectangle window = new Rectangle(xLeft + xIncrement, yPos + yIncrement, 20, 20);
+                g2.fill(window);
+                g2.draw(window);
+            }
+        }
     }
 }

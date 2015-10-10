@@ -13,14 +13,14 @@ import java.awt.Color;
  */
 public class Airplane
 {
-    /** specifies the x coordinate of the airplane. */
+    /** specifies the starting x coordinate of the airplane. */
     private int xLeft;
     
-    /** specifies the y coordinate of the airplane. */
+    /** specifies the starting y coordinate of the airplane. */
     private int yTop;
     
     /**
-     * Constructor for objects of class Building that specifies the position of the building.
+     * Constructor for objects of class Building that specifies the position of the airplane object.
      */
     public Airplane(int x, int y)
     {

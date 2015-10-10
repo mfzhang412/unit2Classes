@@ -29,7 +29,7 @@ public class Building
     {
         xLeft = x;
         buildingHeight = height;
-        yPos = 750 - buildingHeight - 100;
+        yPos = 750 - buildingHeight - 81;
         buildingWidth = (int) (buildingHeight * .4);
     }
 

@@ -58,6 +58,17 @@ public class Sun
         {
             g2.setColor(Color.BLACK);
             g2.fill(sky);
+            
+            Ellipse2D.Double moon = new Ellipse2D.Double(xLeft - 1400, yTop, 100, 100);
+            g2.setColor(Color.WHITE);
+            g2.fill(moon);
+            g2.draw(moon);
+            
+            Ellipse2D.Double crescent = new Ellipse2D.Double(xLeft - 1360, yTop, 100, 100);
+            g2.setColor(Color.BLACK);
+            g2.fill(crescent);
+            g2.draw(crescent);
+            
         }
         g2.draw(sky);
         

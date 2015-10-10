@@ -153,7 +153,7 @@ public class CityscapeComponent extends JComponent
         airplane = new Airplane(100 + planeAnimation, 100);
         
         carAnimation += 13;
-        car = new Car(0 + carAnimation, 650);
+        car = new Car(1400 - carAnimation, 650);
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         repaint();
     }
